@@ -1,0 +1,66 @@
+<div *ngIf="loader" id="loading">
+  <h1>
+    C a r r e g a n d o
+  </h1>
+  <img src="assets/img/loader.gif">
+</div>
+<div *ngIf="!loader" class="background">
+  <img id="selecao" style="width: 110%; margin-left: -5%;" src="assets/img/classes.webp">
+  <h1 id="title">SELECIONE SUA CLASSE</h1>
+  <div id="warrior" class="marcadorDeRosto">
+    <div class="conteudo">
+      <h2 style="font-family: monstserrat;">Renegado</h2>
+      <h3 style="font-family: monstserrat;">Sendo uma das classes mais simples,<br> sem precisar pensar muito.</h3>
+      <h3 style="font-family: monstserrat;">Normalmente agem como barbaros, so pensam em aniquilar seus inimigos com
+        seus proprios punhos ou armas</h3>
+      <h3 style="font-family: monstserrat;">Nao costumam usar magia.</h3>
+    </div>
+  </div>
+  <div id="templario" class="marcadorDeRosto">
+    <div class="conteudo">
+      <h2 style="font-family: monstserrat;">Templario</h2>
+      <h3 style="font-family: monstserrat;">Sendo uma das classes mais simples,<br> sem precisar pensar muito.</h3>
+      <h3 style="font-family: monstserrat;">Normalmente agem como barbaros, so pensam em aniquilar seus inimigos com
+        seus proprios punhos ou armas</h3>
+      <h3 style="font-family: monstserrat;">Nao costumam usar magia.</h3>
+    </div>
+  </div>
+  <div id="arcano" class="marcadorDeRosto">
+    <div class="conteudo">
+      <h2 style="font-family: monstserrat;">Maga</h2>
+      <h3 style="font-family: monstserrat;">Sendo uma das classes mais simples,<br> sem precisar pensar muito.</h3>
+      <h3 style="font-family: monstserrat;">Normalmente agem como barbaros, so pensam em aniquilar seus inimigos com
+        seus proprios punhos ou armas</h3>
+      <h3 style="font-family: monstserrat;">Nao costumam usar magia.</h3>
+    </div>
+  </div>
+  <div id="ladino" class="marcadorDeRostoLadoOposto">
+    <div class="conteudo">
+      <h2 style="font-family: monstserrat;">Ladino</h2>
+      <h3 style="font-family: monstserrat;">Sendo uma das classes mais simples,<br> sem precisar pensar muito.</h3>
+      <h3 style="font-family: monstserrat;">Normalmente agem como barbaros, so pensam em aniquilar seus inimigos com
+        seus proprios punhos ou armas</h3>
+      <h3 style="font-family: monstserrat;">Nao costumam usar magia.</h3>
+    </div>
+  </div>
+  <div id="druida" class="marcadorDeRostoLadoOposto">
+    <div class="conteudo">
+      <h2 style="font-family: monstserrat;">Druida</h2>
+      <h3 style="font-family: monstserrat;">Sendo uma das classes mais simples,<br> sem precisar pensar muito.</h3>
+      <h3 style="font-family: monstserrat;">Normalmente agem como barbaros, so pensam em aniquilar seus inimigos com
+        seus proprios punhos ou armas</h3>
+      <h3 style="font-family: monstserrat;">Nao costumam usar magia.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="warrior" (mouseenter)="warriorBackground()" (mouseleave)="voltarNormalBackground()"
+  (click)="warriorClick()"></div>
+<div class="templario" (mouseenter)="templarioBackground()" (mouseleave)="voltarNormalBackground()"
+  (click)="templarioClick()"></div>
+<div class="arcano" (mouseenter)="arcanoBackground()" (mouseleave)="voltarNormalBackground()" (click)="arcanoClick()">
+</div>
+<div class="ladino" (mouseenter)="ladinoBackground()" (mouseleave)="voltarNormalBackground()" (click)="ladinoClick()">
+</div>
+<div class="druida" (mouseenter)="druidaBackground()" (mouseleave)="voltarNormalBackground()" (click)="druidaClick()">
+</div>

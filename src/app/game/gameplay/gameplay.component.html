@@ -1,0 +1,214 @@
+<div id="personagem">
+  <table>
+    <caption>
+      Personagem
+    </caption>
+    <thead>
+      <tr>
+        <th>Nivel</th>
+        <th colspan="3">XP</th>
+      </tr>
+      <tr>
+        <td>{{ jogador.nivel }}</td>
+        <td colspan="3">
+          <div class="centralize">
+            <div id="barraDeXp">
+              <div id="xp" [ngStyle]="{width: xpBarra}"></div>
+            </div>
+            <p style="position: absolute;">{{ xpBarra }}</p>
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Vida</th>
+        <td colspan="3">
+          <div class="centralize">
+            <div id="barraDeXp">
+              <div id="vida" [ngStyle]="{width: vidaBarra}" [style.background-color]="corVida"></div>
+            </div>
+            <p style="position: absolute;">{{ vidaBarra }}</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>Mana</th>
+        <td colspan="3">
+          <div class="centralize">
+            <div id="barraDeXp">
+              <div id="mana" [ngStyle]="{width: manaBarra}"></div>
+            </div>
+            <p style="position: absolute;">{{ manaBarra }}</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>Stamina</th>
+        <td colspan="3">
+          <div class="centralize">
+            <div id="barraDeXp">
+              <div id="stamina" [ngStyle]="{width: staminaBarra}"></div>
+            </div>
+            <p style="position: absolute;">{{ staminaBarra }}</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>Sanidade</th>
+        <td colspan="3">
+          <div class="centralize">
+            <div id="barraDeXp">
+              <div id="sanidade" [ngStyle]="{width: sanidadeBarra}"></div>
+            </div>
+            <p style="position: absolute;">{{ sanidadeBarra }}</p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Ações</th>
+      </tr>
+      <tr>
+        <td><button (click)="xpGasto()" (click)="uparDeNivel()">UPAR</button></td>
+        <td><button (click)="meditacao()">MEDITAR</button></td>
+        <td><button (click)="missaoCompleta(3)">MISSAO COMPLETA DIFICIL</button></td>
+        <td><button (click)="missaoCompleta(4)">MISSAO COMPLETA BOSS</button></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- <div class="gradientSeparador"></div> -->
+
+<div class="combate">
+  <!-- <img src="assets/img/mobFacil.gif" style="height: 100%;"> -->
+  <div class="boss">
+    <img src="assets/img/mobBoss.gif" style="height: 100%;">
+    <div class="statusMonstro">
+      <p>VIDA MONSTRO</p>
+      <div class="centralize">
+        <div id="barraDeXp">
+          <div id="vida" [ngStyle]="{width: vidaMonstro}" [style.background-color]="corMonstro"></div>
+        </div>
+        <p style="position: absolute;">{{ vidaMonstro }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="terminal">
+  <button (click)="missaoFacil()">Partida Facil</button>
+  <button (click)="missaoBoss()">Partida Boss</button>
+
+  <button (click)="atacar()">Atacar Melee</button>
+
+  <p>DANO</p>
+  <p style="font-family: monstserrat; font-size: 30px;">{{ataque}}</p>
+</div>
+
+<!-- <button (click)="missaoFacil()">Partida Facil</button>
+
+<button (click)="atacar()">Atacar Melee</button>
+
+<p>DANO</p>
+<p style="font-family: monstserrat; font-size: 30px;">{{ataque}}</p>
+<p *ngIf="monstro.vida">VIDA MONSTRO</p>
+<p style="font-family: monstserrat; font-size: 30px;">{{monstro.vida}}</p> -->
+
+<div id="meditar" class="modal">
+  <div class="modal-content">
+    <div class="cantoDireito">
+      <span class="close" (click)="fecharModal()">&times;</span>
+    </div>
+    <div class="atributos">
+      <table>
+        <caption>
+          Atributos
+        </caption>
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>--------</th>
+            <th>Multiplicador</th>
+            <th *ngIf="jogador.atributos.pontoLivre">/</th>
+            <th *ngIf="jogador.atributos.pontoLivre">Upar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Força</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.forca}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.forca}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(1)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+          <tr>
+            <td>Resistência</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.resistencia}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.resistencia}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(2)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+          <tr>
+            <td>Agilidade</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.agilidade}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.agilidade}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(3)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+          <tr>
+            <td>Percepção</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.percepcao}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.percepcao}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(4)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+          <tr>
+            <td>Inteligência</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.inteligencia}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.inteligencia}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(5)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+          <tr>
+            <td>Carisma</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.carisma}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.carisma}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(6)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+          <tr>
+            <td>Sorte</td>
+            <td>--------</td>
+            <td>{{jogador.atributos.sorte}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre">+ {{melhoria.sorte}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre"><button (click)="uparAtributos(7)" class="iconUpar"><img
+                  height="32" width="32" src="assets/img/upar.png" alt=""></button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Pontos Livres</th>
+            <td>--------</td>
+            <td>{{pontosDeMelhoria}}</td>
+            <td *ngIf="jogador.atributos.pontoLivre" colspan="2">
+              <button (click)="confirmar()">
+                Confirmar
+              </button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</div>

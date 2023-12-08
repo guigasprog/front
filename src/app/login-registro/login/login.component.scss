@@ -1,0 +1,150 @@
+#background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.background {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 1000ms;
+  z-index: 1;
+}
+
+.background>img {
+  width: 100%;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(to right, transparent, black);
+}
+.gradient2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(to right, black, transparent);
+}
+
+.introducao {
+  margin-left: 15%;
+  color: white;
+  font-family: monstserrat;
+  font-weight: 400;
+}
+.introducao2 {
+  margin-left: 55%;
+  color: white;
+  font-family: monstserrat;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: monstserrat;
+}
+
+.telaDeCadastro {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 1%;
+  padding-top: 6%;
+}
+
+.telaDeCadastro2 {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 1%;
+  padding-top: 3%;
+}
+
+input {
+  width: 77%;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  font-family: monstserrat;
+  border: 0px solid transparent;
+  border-bottom: 2px solid white;
+  margin-bottom: 5%;
+  padding-left: 3%;
+  font-size: 16px;
+  transition: 250ms;
+}
+
+input:focus {
+  color: crimson;
+  border-bottom: 2px solid crimson;
+  outline: 2px solid crimson;
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 15%;
+  width: 80%;
+  height: 15%;
+  background-color: transparent;
+  border:  2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 500ms;
+}
+
+#buttonEntrar:hover {
+  animation: pulse 1s ease infinite;
+  border:  2px solid crimson;
+}
+
+#buttonEntrar2 {
+  position: absolute;
+  left: 0%;
+  top: 64%;
+}
+
+#textEntrar {
+  transition: 500ms;
+}
+
+#buttonEntrar:hover>#textEntrar {
+  animation: pulseText 1s ease infinite;
+  color: crimson;
+}
+
+@keyframes pulse {
+  0% {box-shadow: 0px 0px 3px crimson;}
+  50% {box-shadow: 0px 0px 9px crimson;}
+  100% {box-shadow: 0px 0px 3px crimson;}
+}
+
+@keyframes pulseText {
+  0% {text-shadow: 0px 0px 3px crimson;}
+  50% {text-shadow: 0px 0px 9px crimson;}
+  100% {text-shadow: 0px 0px 3px crimson;}
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Boss {}","map":{"version":3,"mappings":"AACA,OAAM,MAAOA,IAAI","names":["Boss"],"sourceRoot":"","sources":["C:\\Users\\Guigas\\Documents\\gamingAngular\\RpgGaming\\src\\app\\game\\shared\\boss\\boss.model.ts"],"sourcesContent":["\r\nexport class Boss {\r\n  \r\n}"]},"metadata":{},"sourceType":"module","externalDependencies":[]}

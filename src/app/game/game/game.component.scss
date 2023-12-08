@@ -1,0 +1,139 @@
+#loading {
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loading>img {
+  width: 100%;
+}
+#loading>h1 {
+  position: absolute;
+  bottom: 15%;
+  color: #F7F7F7;
+  font-size: 4em;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#title {
+  color: white;
+
+  top: 0;
+}
+
+#selecao {
+  transition: all 1000ms;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  color: white;
+}
+
+.warrior {
+  width: 240px;
+  height: 320px;
+  position: absolute;
+  top: 45%;
+  left: 1%;
+}
+
+.templario {
+  width: 200px;
+  height: 300px;
+  border-radius: 90%;
+  position: absolute;
+  top: 19%;
+  left: 21%;
+}
+
+.arcano {
+  width: 200px;
+  height: 300px;
+  border-radius: 90%;
+  position: absolute;
+  top: 26%;
+  left: 42%;
+}
+
+.ladino {
+  width: 200px;
+  height: 300px;
+  border-radius: 100%;
+  position: absolute;
+  top: 30%;
+  right: 25%;
+}
+
+.druida {
+  width: 240px;
+  height: 385px;
+  position: absolute;
+  top: 35%;
+  right: 1%;
+}
+
+.warrior:hover>.marcadorDeRosto {
+  opacity: 1;
+}
+
+.marcadorDeRosto{
+  width: 40%;
+  height: 100%;
+  background-image: linear-gradient(to right, transparent, black 30%);
+  left: 100%;
+  top: 0;
+  transition: all 1000ms;
+  color: white;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-family: monstserrat;
+}
+
+.marcadorDeRostoLadoOposto{
+  width: 40%;
+  height: 100%;
+  background-image: linear-gradient(to right, black 70%, transparent);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  transition: all 1000ms;
+  color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.conteudo {
+  width: 70%;
+  height: 90%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+#warrior {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#templario {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#arcano {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
