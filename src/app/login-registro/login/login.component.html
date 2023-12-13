@@ -1,12 +1,13 @@
-<img id="background" src="../../../assets/img/bloodbornSelecaoClasseRaca.jpg">
-<div class="background" id="background1">
+<img *ngIf="logar" id="background" src="../../../assets/img/bloodbornSelecaoClasseRaca.jpg">
+<div *ngIf="logar" class="background" id="background1">
   <div class="gradient">
     <h1 class="introducao" style="margin-top: 5%; margin-bottom: 2%;">Seja bem-vindo ao <span
         style="color: rgb(255, 75, 111);">Chaos</span> Trials</h1>
     <h3 class="introducao">Aonde sua sorte está em jogo. <br> Sua dificuldade é <span
         style="color: rgb(255, 75, 111);">hardcore</span>, <br>
       mas não desanime, <br>pois sua <span style="color: rgb(255, 75, 111);">vitória</span> um dia chegará.</h3>
-    <h3 class="introducao">Jogue já <span style="color: rgb(167, 255, 255);" (click)="registrarLogar()">REGISTRAR</span></h3>
+    <h3 class="introducao">Jogue já <span style="color: rgb(167, 255, 255);" (click)="registrarLogar()">REGISTRAR</span>
+    </h3>
   </div>
   <div class="telaDeCadastro">
     <h2 style="font-weight: 300; margin-bottom: 20%;">Login</h2>
@@ -23,11 +24,12 @@
     </button>
   </div>
 </div>
-<div class="background" id="background2">
+<div *ngIf="logar" class="background" id="background2">
   <div class="gradient2">
     <h1 class="introducao2" style="margin-top: 5%; margin-bottom: 2%;">Seja bem-vindo ao <span
         style="color: rgb(255, 75, 111);">Chaos</span> Trials</h1>
-    <h3 class="introducao2">Já possuo uma conta <span style="color: rgb(167, 255, 255);" (click)="registrarLogar()">LOGAR</span></h3>
+    <h3 class="introducao2">Já possuo uma conta <span style="color: rgb(167, 255, 255);"
+        (click)="registrarLogar()">LOGAR</span></h3>
   </div>
   <div class="telaDeCadastro2">
     <h2 style="font-weight: 300; margin-bottom: 10%;">Registrar</h2>
@@ -46,9 +48,42 @@
     <label for="senhaInput">
       <h3 style="font-weight: 300;">Repita a senha</h3>
     </label>
-    <input name="confSenhaInput" id="confSenhaInput" type="text" autocomplete="off" [(ngModel)]="registrarForm.senhaConfirmar">
+    <input name="confSenhaInput" id="confSenhaInput" type="text" autocomplete="off"
+      [(ngModel)]="registrarForm.senhaConfirmar">
     <button (click)="cadastro()" id="buttonEntrar2">
       <h2 id="textEntrar" style="font-weight: 500;">Registrar</h2>
     </button>
   </div>
+</div>
+
+<div class="menu" *ngIf="!logar">
+  <h1 class="escrevendo-animacao" [style]="stylesBomDia">{{ textoHtml }}</h1>
+  <div class="titulo" [style]="stylesSlots">
+    <h1>Selecione seu Heroi</h1>
+  </div>
+  <div class="slots" [style]="stylesSlots">
+    <div class="primeiroPersonagem" *ngIf="personagensDoUsuario[0] == null">
+      AAAAA
+    </div>
+    <div class="slot slot1" *ngFor="let personagem of personagensDoUsuario">
+      <div class="detalhes">AAA</div>
+    </div>
+    <!-- <div class="slot slot2">
+      <div class="detalhes">aaa</div>
+    </div>
+    <div class="slot slot3">
+      <div class="detalhes">
+        <div class="criacaoQuandoVaz" *ngIf="personagensDoUsuario[0] == null">
+          NAO EXISTE
+        </div>
+      </div>
+    </div>
+    <div class="slot slot4">
+      <div class="detalhes">ddd</div>
+    </div>
+    <div class="slot slot5">
+      <div class="detalhes">ZZZ</div>
+    </div> -->
+  </div>
+
 </div>
